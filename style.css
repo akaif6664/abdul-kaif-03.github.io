@@ -1,0 +1,516 @@
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;700&display=swap");
+
+/* CSS Variables for Theme */
+:root {
+  --primary-color: #0d6efd;
+  --secondary-color: #6c757d;
+  --background-color: #121212;
+  --text-color: #ffffff;
+  --light-bg: #f8f9fa;
+  --dark-bg: #212529;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  scroll-behavior: smooth;
+  transition: background-color 0.3s, color 0.3s;
+  background-color: var(--light-bg);
+  color: #333;
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+body.dark-mode .navbar {
+  background-color: var(--background-color);
+}
+
+body.dark-mode .section-padding {
+  background-color: var(--background-color);
+}
+body.dark-mode #skills {
+  background-color: #181818 !important;
+  padding: auto 0 !important;
+}
+
+body.dark-mode .section-heading {
+  color: #ffffff !important;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.6) !important;
+}
+
+body.dark-mode #skills h5 {
+  color: #e5e5e5 !important;
+  font-weight: bold !important;
+}
+
+body.dark-mode #skills i {
+  color: #0d6efd !important; /* Use your primary color for the icons */
+}
+
+body.dark-mode #skills h5:hover {
+  color: #0d6efd !important; /* Add some hover effect for interaction */
+}
+
+body.dark-mode .card {
+  background-color: #1e1e1e;
+  color: var(--text-color);
+}
+
+body.dark-mode .btn-primary {
+  background-color: #0d6efd;
+  border-color: #0d6efd;
+}
+
+body.dark-mode .btn-outline-primary {
+  color: var(--text-color);
+  border-color: var(--text-color);
+}
+/* Dark mode specific styles */
+body.dark-mode #contact {
+  background-color: #181818 !important;
+  color: var(--text-color) !important;
+  padding: auto 0 !important;
+}
+body.dark-mode .text-muted {
+  color: white !important;
+}
+body.dark-mode .form-label {
+  color: var(--text-color) !important;
+  font-weight: bold !important;
+}
+
+body.dark-mode .form-control {
+  background-color: #282828 !important;
+  color: var(--text-color) !important;
+  border: 1px solid #444 !important;
+  border-radius: 5px !important;
+  padding: 10px !important;
+}
+
+body.dark-mode .form-control::placeholder {
+  color: #999999 !important;
+}
+
+body.dark-mode .btn-primary {
+  background-color: var(--primary-color) !important;
+  border-color: var(--primary-color) !important;
+  color: var(--text-color) !important;
+  border-radius: 5px !important;
+}
+
+body.dark-mode .btn-primary:hover {
+  background-color: #0056b3 !important;
+}
+
+body.dark-mode .bg-white {
+  background-color: #202020 !important;
+  padding: 30px !important;
+  border-radius: 10px !important;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.8) !important;
+}
+
+body.dark-mode h2.section-heading {
+  color: var(--text-color) !important;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.6) !important;
+}
+
+body.dark-mode footer {
+  background-color: var(--dark-bg);
+}
+
+body.dark-mode .modal-content {
+  background-color: #1e1e1e;
+  color: var(--text-color);
+}
+
+/* Navbar Styles */
+.navbar {
+  transition: background-color 0.3s;
+}
+
+.navbar-brand {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: black;
+}
+.navbar-brand:hover {
+  color: var(--primary-color);
+}
+body.dark-mode .navbar-brand {
+  color: white;
+}
+body.dark-mode .navbar-brand:hover {
+  color: var(--primary-color);
+}
+.nav-link {
+  margin-left: 1rem;
+  transition: color 0.3s ease;
+  color: black;
+}
+body.dark-mode .nav-link {
+  color: white;
+}
+.nav-link:hover,
+.nav-link.active {
+  color: var(--primary-color) !important;
+  text-decoration: underline;
+}
+
+/* Hero Section */
+.hero {
+  height: 100vh;
+  /* background: url('../assets/images/hero-bg.jpg') no-repeat center center/cover; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(13, 110, 253, 0.6);
+  mix-blend-mode: overlay;
+}
+
+.hero .container {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  margin-top: 1rem;
+}
+
+.hero .btn {
+  margin-top: 2rem;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+}
+.scroll-indicator {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  animation: scrollDown 1.5s infinite;
+}
+@keyframes scrollDown {
+  0% {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Section Padding */
+.section-padding {
+  padding: 80px 0;
+}
+
+/* About Section */
+.about img {
+  max-width: 100%;
+  /* border-radius: 15px; */
+
+  border-radius: 50% !important;
+}
+
+/* Skills Section */
+.skills i {
+  color: var(--primary-color);
+}
+
+.skills h5 {
+  margin-top: 1rem;
+  font-weight: 600;
+  cursor: default;
+}
+
+/* Projects Section */
+.projects .card {
+  border: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+}
+
+.projects .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.projects .card-img-top {
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  height: 200px;
+  object-fit: cover;
+}
+.projects .card-text {
+  display: block;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  color: #666;
+}
+#experience h2 {
+  text-align: center;
+}
+#exp_text {
+  /* display: block;
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis; */
+  color: #666;
+}
+/* Contact Section */
+.contact form {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-mode .contact form {
+  background-color: #1e1e1e;
+}
+
+/* Footer */
+footer a {
+  transition: color 0.3s;
+}
+
+footer a:hover {
+  color: var(--primary-color);
+}
+
+/* Responsive Typography */
+@media (max-width: 992px) {
+  .hero h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
+
+/* Theme Toggle Button */
+#theme-toggle {
+  background: none;
+  border: none;
+  color: black;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+body.dark-mode #theme-toggle {
+  color: #fff;
+}
+#theme-toggle:focus {
+  outline: none;
+}
+
+/* new code */
+/* Experience Section */
+body.dark-mode #experience {
+  background-color: #181818 !important;
+}
+body.dark-mode .experience_card {
+  background-color: var(--background-color) !important;
+}
+#experience {
+  /* background-color: var(--light-bg); */
+  padding: 60px 0;
+  /* text-align: center; */
+}
+
+#experience .experience_card {
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#experience .experience_container {
+  display: flex;
+  justify-content: center;
+  gap: 30px; /* Adjust the gap as needed */
+  flex-wrap: wrap;
+}
+#experience .experience_card {
+  flex: 1 1 300px; /* This keeps the cards responsive */
+  /* max-width: 500px; Optional: limit card width if needed */
+  width: 100%;
+}
+#experience .experience_card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+#experience .experience_card h3 {
+  color: var(--primary-color);
+  font-weight: 700;
+}
+
+#experience .experience_card p {
+  color: #666;
+}
+
+/* Responsive Navigation */
+.navbar-toggler {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255, 255, 255, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+/* Scroll Indicator (Alternative Style) */
+.scroll-indicator {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 35px;
+  height: 35px;
+  border: 2px solid var(--primary-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: bounce 2s infinite;
+}
+
+.scroll-indicator i {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* General Button Styles */
+.btn-custom {
+  background-color: var(--primary-color);
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-custom:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+
+.btn-outline-custom {
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
+  padding: 0.6rem 1.2rem;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
+}
+
+.btn-outline-custom:hover {
+  background-color: var(--primary-color);
+  color: #fff;
+  transform: translateY(-3px);
+}
+/* Certificates Section */
+.certificates-section {
+  text-align: center;
+  padding: 60px 0;
+}
+
+.certificates-section h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-color);
+  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+.certificate-card {
+    color: var(--text-color);
+    padding: 1rem;
+    border-radius: 15px;
+    width: 100%;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: none;
+}
+
+.certificate-card h5 {
+  color: black;
+  font-weight: 600;
+}
+
+.certificate-card p {
+  color: #c0c0c0; /* A lighter gray for better readability */
+}
+
+.certificate-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 15px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Dark mode specific styles */
+body.dark-mode .certificates {
+  background-color: var(--background-color) !important;
+}
+body.dark-mode .certificates-section {
+  background-color: var(--background-color);
+}
+
+body.dark-mode .certificate-card {
+  background-color: #2a2a2a;
+  color: #e5e5e5;
+}
+
+body.dark-mode .certificate-card h5 {
+  color: #ffffff;
+}
+
+body.dark-mode .certificate-card p {
+  color: #d0d0d0;
+}
